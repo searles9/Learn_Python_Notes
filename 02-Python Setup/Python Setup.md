@@ -1,7 +1,7 @@
 # Python Setup Notes
 ***
-* [Installing Python](#updateLink)
-* [Running Python](#updateLink)
+* [Installing Python](https://github.com/searles9/Learn-Python-Notes/blob/main/02-Python%20Setup/Python%20Setup.md#installing-python-3-anaconda-version)
+* [Running Python](https://github.com/searles9/Learn-Python-Notes/blob/main/02-Python%20Setup/Python%20Setup.md#running-python-code)
 ***
 # Installing Python 3 (anaconda version):
 * Installing Python using Anaconda installs additional libraries that you may need all within one install package
