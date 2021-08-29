@@ -94,4 +94,29 @@
 * ```print(f"his name is {name}")```
 * New from python 3.6
 
-# Python Lists
+# Lists
+* ordered sequences that can hold a variety of object types
+* ```mylist = [1,2,"string",4.55]```
+* lists support indexing and slicing - they also support methods
+* ```len(mylist)```
+* ``` mylist[3] ``` is 4.55
+* lists can be changed ... ```mylist[3] = "four"```
+* ```mylist.append("item 5")```
+* to remove an item from a list (the last item in the list): ```mylist.pop()``` or ```removed_item = mylist.pop()``` or to remove a specific item ```mylist.pop(0)``` ... pop returns the item removed
+* to sort the list: ```mylist.sort()``` (doesnt return anything it just updates the actual list)
+* to sort in revers: ```mylist.reverse()```
+
+# Dictionaries
+* unordered mappings for storing objects
+* uses key value pairing
+* you can call the key to get the value
+* cannot be sorted
+* ```mydict = {"key1":"value1","key2":2} ```
+* ```mydict['key1']``` returns ```value1```
+* dictonaries can hold lists
+* ```fancydict = {"key1":["a","b","c"]}```
+* ```fancydict["key1"][2].upper()``` would return ```C```
+* to add or overwrite: ```mydict["newkey"] = "new value"```
+#### useful methods
+* mydict.keys() ... shows all the keys
+* mydict.values() ..shows all the values
