@@ -14,7 +14,7 @@
 -ex use case: to check if a number is odd (you get a remainder of 1)... 23 % 2 = 1
 
 * Powers: 2 ** 3 = 8
-* Order of operations: (2+2) * (10*3)
+* Order of operations: (2+2) * (10*3)<br><br>
 ![Simple Python Math](./section-images/math.png)
 
 # Variable Assignments
@@ -75,3 +75,23 @@
 * you could also split on a specific letter ```x.split(i)```
 
 # Print Formating with Strings
+* Concatination: ```print("Hello " + my_name)```
+### Interpolation:
+#### .format() :
+* ```"string".format('something1', 'something2')```
+* ```print('text stuff '.format(more text))``` returns ``` text stuff more text```
+* Insert by index position:
+* ```print('the {} {} {}.format('fox','brown','quick'))``` returns ```the fox brown quick```
+* you can order it as such: ```print('the {2} {1} {0}.format('fox','brown','quick'))``` returns ```the quick brown fox```
+*you can use variables: ```print('the {q} {b} {f}.format(f = 'fox',b = 'brown',q = 'quick'))``` returns ```the quick brown fox```
+#### float formatting
+* you can do: ```"{value:width.precision f}"```
+* normal: 100/777
+* ```print("the result was: {r:1.3f}".format(r = result))``` would return 0.129 for example
+* width is essentially white space - so adding a width of 6 to a 4 character float just makes the string longer
+#### f strings
+* ```name = donovan```
+* ```print(f"his name is {name}")```
+* New from python 3.6
+
+# Python Lists
