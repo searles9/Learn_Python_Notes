@@ -146,5 +146,8 @@
 * ```1 > 2``` returns False
 * ```1 == 1``` returns True
 
-# I/O with Basic Files in Python
-*
+# I/O with Basic Files (.txt) in Python
+* make a test file with linuc or bash: ```touch test.txt```
+* use jupyter to make a text file: ```%%writefile myfile.txt``` ( you can then put text in the call that will be added to the file)
+* open the file so you can interact with it: ```myfile = open('test.txt')```
+* to read the file back as a string: ```myfile.read()```
