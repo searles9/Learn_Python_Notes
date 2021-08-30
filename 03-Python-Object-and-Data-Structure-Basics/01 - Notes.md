@@ -157,19 +157,29 @@
 * ex: ```'C:\\Users\\donov\\Documents\\GitHub\\Learn-Python-Notes\\03-Python-Object-and-Data-Structure-Basics\\test.txt'```
 * For file locations in linux or mac you use forward slashes: ```/file/path/here```
 * to close a file (to avoid errors): myfile.close()
-* Best practice:  
+* **Best practice:**  
 ```
 with open('myfile.txt') as my_new_file:
      contents = my_new_file.read()
 ```
 -When you follow the best practice method you dont have to close out the file. It closes after everything in the indented portion is run.
-### To read the file (covered above):
+### Modes
+* r = read
 ```
 with open('myfile.txt', mode='r') as my_new_file:
      contents = my_new_file.read()
 ```
-### To write to a file:
+* w = write (will overwrite or create new)
 ```
-with open('myfile.txt', mode='w') as my_new_file:
-     contents = my_new_file.read()
+with open('newfile.txt', mode='w') as my_new_file:
+     contents = my_new_file.write("will create a brand new file")
 ```
+* a = append
+```
+with open('myfile.txt', mode='a') as my_new_file:
+     contents = my_new_file.write("new line text")
+```
+* r+ = reading and writing
+* w+ = writing and reading (overwritesexisting files or creates a new file)
+
+
