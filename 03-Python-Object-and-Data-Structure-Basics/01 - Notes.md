@@ -150,4 +150,26 @@
 * make a test file with linuc or bash: ```touch test.txt```
 * use jupyter to make a text file: ```%%writefile myfile.txt``` ( you can then put text in the call that will be added to the file)
 * open the file so you can interact with it: ```myfile = open('test.txt')```
-* to read the file back as a string: ```myfile.read()```
+* to read the file back as a string: ```myfile.read()``` 
+* to read the file again you have to "reset the cursor": ```myfile.seek(0)
+* to put each line as an item in a list: ```myfile.readlines()```
+* for file locations in Windows - python usually requires two ```\\'s``` (one acts as an escape character)
+* ex: ```'C:\\Users\\donov\\Documents\\GitHub\\Learn-Python-Notes\\03-Python-Object-and-Data-Structure-Basics\\test.txt'```
+* For file locations in linux or mac you use forward slashes: ```/file/path/here```
+* to close a file (to avoid errors): myfile.close()
+* Best practice:  
+```
+with open('myfile.txt') as my_new_file:
+     contents = my_new_file.read()
+```
+-When you follow the best practice method you dont have to close out the file. It closes after everything in the indented portion is run.
+### To read the file (covered above):
+```
+with open('myfile.txt', mode='r') as my_new_file:
+     contents = my_new_file.read()
+```
+### To write to a file:
+```
+with open('myfile.txt', mode='w') as my_new_file:
+     contents = my_new_file.read()
+```
