@@ -142,3 +142,9 @@
 * ```set("bob")``` would return {"b","o","b"}
 
 # Booleans
+* operators that convey true or false statements
+* ```1 > 2``` returns False
+* ```1 == 1``` returns True
+
+# I/O with Basic Files in Python
+*
