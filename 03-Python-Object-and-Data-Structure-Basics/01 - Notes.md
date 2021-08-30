@@ -110,7 +110,7 @@
 * unordered mappings for storing objects
 * uses key value pairing
 * you can call the key to get the value
-* cannot be sorted
+* **cannot be sorted and dont retain an order**
 * ```mydict = {"key1":"value1","key2":2} ```
 * ```mydict['key1']``` returns ```value1```
 * dictonaries can hold lists
@@ -120,3 +120,25 @@
 #### useful methods
 * mydict.keys() ... shows all the keys
 * mydict.values() ..shows all the values
+* mydict.items() ...shows all the pairings in a tuple
+
+# Tuples
+* **tupples are immutable so they cant be changed**
+* tuples are in parathensis: ```mytuple = (1,2,3,2)```
+* you can mix object types
+* you can use slicing and indexing
+* to cound how many times something shows up ```mytuple.count(2)``` returns 2 because the tuple has two 2's
+* way less methods than lists
+* ```mytuple.index(1)``` returns 0 ... it only shows the index the first time it shows up in the tuple
+* Why use a tuple over a list?: use when you are passing around objects in a program and you dont want the values to be changed (data integrity)
+
+# Sets
+* unordered collection of **unique elements**
+* ```myset = set()```
+* ```myset.add(1)``` (if you add an item that is already in a set it wont actually add it)
+* get the unique values from a list by using sets
+* list: ```thelist = [1,1,1,1,1,2,2,2,2,2,3,3,3,3,]```
+* convert to set: ```set(thelist)``` returns {1,2,3}
+* ```set("bob")``` would return {"b","o","b"}
+
+# Booleans
