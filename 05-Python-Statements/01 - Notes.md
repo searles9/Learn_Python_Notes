@@ -309,5 +309,10 @@ for x in [2,4,6]:
     for y in [100,200,300]
     mylist.append(x*y)
 
-# so basically its takes 2 and multiplies it by 100 -200 and 300, then multiplies 4 and multiplies it by 100,200,300...etc...
+# so basically its takes 2 and multiplies it by 100 -200 and 300, then takes 4 and multiplies it by 100,200,300...etc...
+```
+```
+mylist = [x*y for x in [2,4,7] for y in [1,10,1000]]
+
+# this is the flattened version of whats above
 ```
