@@ -154,3 +154,116 @@ for item in X:
 ```
 
 # Useful Operators in Python
+### Range
+* range is a generator but it doesnt return anything
+```
+for num in range(start,stop,step)
+    print(num)
+```
+* to get a return:
+```
+list(range(0,11,2))
+# this casts the results to a list
+```
+### Enumerate 
+* without enumerate
+```
+index_count = 0
+
+for letter in "abcde":
+    print("At index {} the  letter is {}".format(index_count, letter))
+```
+* or
+```
+index_count = 0
+word = "abcde"
+
+for letter in word:
+    print(word[index_count])
+    index_count += 1
+``` 
+* with enumerate
+```
+index_count = 0
+word = "abcde"
+
+for item in enumerate(word):
+    print(item)
+
+# this returns a tuple with the index and letter - you could then use tuple unpacking to get the values
+```
+
+### Zip
+* Zips together two lists
+* only zips as far as the shortest list 
+```
+list1 = [1,2,3]
+list2 = [a,b,c]
+
+for item in zip(list1,list2):
+    print(item)
+
+# notice how you have to use for item - it wont return anything useful with just zip
+```
+* you can also do
+```
+list(zip(list1,list2))
+```
+
+### In
+*
+```
+list1 = [1,2,3]
+d = {"mykey":222}
+
+x in list1
+a in "a world"
+"mykey" in d
+
+# all return True
+```
+
+### Min,Max
+```
+mylist = [1,2,3,4]
+
+min(mylist)
+max(mylist)
+```
+
+### Random Library 
+* to import a function from a library do:
+```
+from library import function_name
+```
+* Shuffle
+```
+from random import shuffle
+```
+```
+mylist = [1,2,3,4]
+
+shuffle(mylist) 
+# shuffles the list - you have to print to get the value
+```
+* Random int
+```
+from random import randint
+
+# randint(lowrangeint,maxint)
+mynum = randint(0,100)
+```
+
+### Input
+* used to accept user input
+* returns a string
+```
+# input('text to display')
+age = input('what is your age?')
+```
+* you can transform the string to an int like this:
+```
+int(age)
+```
+
+# List Comprehensions in Python
