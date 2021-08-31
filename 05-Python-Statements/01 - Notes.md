@@ -267,3 +267,47 @@ int(age)
 ```
 
 # List Comprehensions in Python
+* a quick way to create a list 
+* this is a good alternitive to -for loops with .append()
+* example with a for loop:
+```
+mystring = "hello"
+mylist = []
+
+for letter in mystrnig:
+    mylist.append(letter)
+```
+* example of list comprehension method:
+```
+mylist = [letter for letter in mystring]
+```
+```
+mylist = [num for num in range(0,11)]
+```
+* you can perform an operation on the item
+```
+mylist = [num**2 for num in range(0,11)]
+# finding the square of the item
+```
+```
+mylist = [x for x in range(0,11) if x%2==0]
+# add the item x only if it meets the condition
+```
+```
+celcius = [0,10,24]
+
+farenheit = [((9/5)*temp + 32) for temp in celcius]
+```
+* if with else and list comprehension
+```
+results = [x if x%2==0] else 'ODD' for x in range(0,11)
+```
+
+* nested loop:
+```
+for x in [2,4,6]:
+    for y in [100,200,300]
+    mylist.append(x*y)
+
+# so basically its takes 2 and multiplies it by 100 -200 and 300, then multiplies 4 and multiplies it by 100,200,300...etc...
+```
