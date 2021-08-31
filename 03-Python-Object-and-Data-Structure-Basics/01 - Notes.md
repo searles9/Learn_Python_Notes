@@ -1,7 +1,5 @@
 # Python Data Types
 ***
-* Python numbers 
-***
 # Python Numbers
 * integers: int (whole number 4)
 * floating points: float (20.50)
