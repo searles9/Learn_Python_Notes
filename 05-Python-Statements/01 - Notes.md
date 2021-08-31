@@ -102,4 +102,55 @@ for key,value in d.items():
 ```
 
 # While Loops
-*
+* While loops continue to exexute code while a condition remains ```True```
+* Syntax:
+```
+while some_boolean_condition:
+    #do something
+else: 
+    # do something different 
+
+# else is when the condition becomes false
+```
+* Real Example:
+```
+x = 0
+
+while x < 5 :
+    print(f'current value of X is {x}')
+    x = x + 1
+else:
+    print('x is not less than 5')
+```
+* ```x = x + 1 ``` can also be written as ```x += 1```
+
+### Break
+* Breaks out of the current closest loop and stops everything
+```
+for letter in mystring:
+     if letter == "a":
+       break
+     else: 
+       print(letter)
+```
+### Continue
+* Goes to the top of the closest loop
+```
+mystring = "Sammy"
+
+for letter in mystring:
+     if letter == "a":
+       contine
+     else: 
+       print(letter)
+```
+### Pass
+* Does nothing
+```
+for item in X:
+    pass
+
+# if you did a comment instead of a pass you would get a syntax error
+```
+
+# Useful Operators in Python
