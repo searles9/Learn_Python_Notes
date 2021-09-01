@@ -69,5 +69,52 @@ check_even_list([2,4,5]) # Would return True
 * if you wanted to return all the even numbers you could add the numbers to a new list and then return that list
 
 # Tuple Unpacking with Python Functions
+```
+stock_prices = [('APPL',200),('GOOG',400),('MSFT',100)]
 
+for item in stock_prices:
+    print(item)
 
+# example of tuple unpacking
+for ticker,price in stock_prices:
+    print(ticker)
+```
+* you can use tuple unpacking within a function - you can return a tuple 
+```
+# if you return "return (employee_of_month,hours)
+# you can get the value as 2 different variables
+
+name,hours = employee_check_func(work_hours)
+# refrencing name gives 1 value
+# refrencing hours gives a seperate value
+
+```
+# Interactions Between Functions
+* you can take 1 function and use it as input for another function
+```
+example -  [' ','O',' ']
+
+from random import shuffle
+
+def shuffle_list(mylist):
+     shuffle(mylist)
+     return mylist
+
+def player_guess():
+    guess = ''
+    while guess not in ['0','1','2']
+       guess = input("pick a number: 0,1 or 2 ")
+    return int(guess)
+
+def check_guess(mylist,guess):
+    if mylist[guess] == 'O':
+        print('u win')
+    else:
+        print('wrong')
+        print(mylist)
+
+mixedup_list = shuffle_list(example)
+guess = player_guess()
+check_guess(mixedup_list,guess) 
+# notice how it takes the return values from the other functions
+```
