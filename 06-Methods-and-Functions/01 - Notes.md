@@ -118,3 +118,45 @@ guess = player_guess()
 check_guess(mixedup_list,guess) 
 # notice how it takes the return values from the other functions
 ```
+
+# "\*args" and "**kwargs" in Python
+## "\*args"
+* Normal function example:
+```
+def myfunc(a,b):
+     returns sum((a,b)) * 0.05
+```
+* "\*args" allows you to take an arbitrary ammount or arguments - see example:
+```
+def myfunc(*args):
+    return sum(args) * 0.05
+
+myfunc(40,50,400,30,40)
+```
+* Both functions do the same thing but notice how the one with "\*args" is much more flexible
+* "\*args" stores those values as a tuple
+* the word args in "\*args" can be anything - so you could use "\*myfunparams" - the ```*``` is what matters 
+
+## "**kwargs"
+* this returns a dictionary - unlike "\*args" which returns a tuple
+```
+def myfunc(**kwargs):
+    if 'fruit' in kwargs:
+        print('my fruit of choice is {}'.format(kwargs['fruit']))
+    else: 
+        print('I did not find any fruit here')
+
+myfunc(fruit='apply', veggie = 'lettuce') # only returns the apply one
+
+```
+## both
+* example:
+```
+def myfunc(*args,**kwargs):
+    print(args)
+    print(kwargs)
+    print('I would like {} {}'.format(args[0],kwargs['food]))
+
+myfunc(10,200,20,fruit='oarnge',animal='dog')
+
+```
