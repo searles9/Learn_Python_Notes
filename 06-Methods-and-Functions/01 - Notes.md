@@ -158,5 +158,5 @@ def myfunc(*args,**kwargs):
     print('I would like {} {}'.format(args[0],kwargs['food]))
 
 myfunc(10,200,20,fruit='oarnge',animal='dog')
-
 ```
+* when you run the function you have to put the args first since you specified them first - its a positional argument
