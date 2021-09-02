@@ -160,3 +160,81 @@ def myfunc(*args,**kwargs):
 myfunc(10,200,20,fruit='oarnge',animal='dog')
 ```
 * when you run the function you have to put the args first since you specified them first - its a positional argument
+
+# Lambda Expressions, Map, and Filter Functions
+## Map
+* Lambda expressions are a way to make anonymous functions (one time use functions that arent even named - use em one time and forget em)
+* you can use map to essetially map a function to each iterabls
+* Map takes all objects in a list and allows you to apply a function to it
+```
+map(func,iterables*)
+```
+```
+# function for use
+
+def square(num):
+     return num**2
+
+my_nums = [1,2,3,4,5]
+
+for item in map(square,my_nums)
+     print(item)
+    # this basically runs the square function on every item in the list
+
+```
+* an example with strings
+```
+def splicer(mystring):
+     if len(mystring)%2 == 0:
+          return 'EVEN'
+     else:
+          return mystring[0]
+
+names = ['andy', 'eve', 'sandy']
+
+list(map(splicer,names))
+```
+* notice how when you call the function in map you dont include `()`
+## Filter 
+* you need to filter by a function that returns true or false
+* Filter takes all objects in a list and runs that through a function to create a new list with all objects that return True in that function.
+```
+def check_even(num):
+     return num%2 == 0
+    
+mynums = [1,2,3,4,5,6]
+
+for n in filter(check_even,mynums):
+    print n
+```
+
+## Lambda Expressions
+* a normal function
+```
+def square(num):
+     result = num ** 2
+     return result
+
+square(3)
+```
+* lambda expression
+```
+square = lambda num: num ** 2
+square(5)
+
+# its assumed this is one time use
+```
+* lambda is often used with map or filter - notice how its less code than defining the whole function
+```
+list(map(lambda num: num ** 2,mynums))
+```
+```
+list(filter(lambda num:num%2 == 0,mynums))
+```
+```
+list(map(lambda name:name[0],names))
+# gets the first letter of the names in the list mylist
+```
+* you should only use lambda expressions when you can easily read it when coming back to your code
+
+# Nested Statements and Scope
