@@ -238,3 +238,26 @@ list(map(lambda name:name[0],names))
 * you should only use lambda expressions when you can easily read it when coming back to your code
 
 # Nested Statements and Scope
+* variable names are stored in namespace which have a scope
+```
+x = 25
+
+def printer():
+     x = 50
+     return x
+
+print(x) # returns 25
+
+print(printer())  # returns 50
+```
+## LEGB Rule
+* L - local: names are assigned in any way **within a function** (def or lambda) and not declared global in that function
+* E - enclosing function locals: Names in the local scope of any and all enclosing functions from innter to outer **(variable in a function within a function)**
+* G - global (module): names assigned at the **top-level of a module file** or declared global in a def within the file
+```
+x = 50
+def myfunc():
+     global x
+     # this means that the function will interact with and change the global x variable
+```
+* B - built in (Python) - names preassigned in the built in names module..open, range,SyntaxError
