@@ -35,7 +35,14 @@ display(row1,row2,row3)
 row2[1] = 'X' 
 ```
 ## Accepting User Input
+* Get input
+```
+result = int(input("Please enter a number:"))
+type(result)
+```
+```
+position_index = int(input("choose an index positions:"))
 
-
-***
-***
+row1[position_index]
+```
+## Validating User Input
