@@ -90,6 +90,7 @@ my_dog.species
 ```
 * notice how you dont use the "self" before species
 * notice how you also dont need to define species when calling Dog()
+* if you have a class object attribute called pi and a class of Circle..instead of using self.pi you could use Circle.pi
 ## Methods
 * methods are **functions defined inside the body of a class** and they are used to perform operations that sometimes utilize the attributes of the object
 * methods are more of actions or operations
@@ -124,3 +125,6 @@ my_dog.bark(50) # runs the bark method
 ```
 * notice the new paramater number, and notice how its not refrenced with ```self.```
 * notice how when you call bark you now pass in the number
+
+# Inheritance and Polymorphism
+* text
