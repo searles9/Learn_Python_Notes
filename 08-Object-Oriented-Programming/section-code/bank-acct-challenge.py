@@ -25,13 +25,13 @@ class Account():
         pass
         return f"{self.owner}'s balance is {self.balance}"
     def deposit(self,amount):
-        self.balance = self.balance + amount
+        self.balance += amount
         print(f"Deposit Accepted. You deposited {amount}")
     def withdraw(self,amount):
         if amount > self.balance:
             print(f"Funds Unavailable! Your balance is {self.balance}")
         else: 
-            self.balance = self.balance - amount
+            self.balance -= amount
             print(f"Withdrawal Accepted. You withdrew {amount}")
 
 # 1. Instantiate the class
