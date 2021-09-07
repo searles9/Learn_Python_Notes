@@ -31,7 +31,7 @@ class Account():
         if amount > self.balance:
             print(f"Funds Unavailable! Your balance is {self.balance}")
         else: 
-            pass
+            self.balance = self.balance - amount
             print(f"Withdrawal Accepted. You withdrew {amount}")
 
 # 1. Instantiate the class
