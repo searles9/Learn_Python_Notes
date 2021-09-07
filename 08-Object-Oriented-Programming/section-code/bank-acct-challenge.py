@@ -17,10 +17,25 @@
 # SEE MY CODE BELOW
 #------------------------------------------------
 class Account():
-    pass
+
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance 
+    def __str__(self):
+        pass
+        return f"{self.owner}'s balance is {self.balance}"
+    def deposit(self,amount):
+        self.balance = self.balance + amount
+        print(f"Deposit Accepted. You deposited {amount}")
+    def withdraw(self,amount):
+        if amount > self.balance:
+            print(f"Funds Unavailable! Your balance is {self.balance}")
+        else: 
+            pass
+            print(f"Withdrawal Accepted. You withdrew {amount}")
 
 # 1. Instantiate the class
-acct1 = Account('Jose',100)
+acct1 = Account('Donovan',100)
 
 # 2. Print the object
 print(acct1)
