@@ -65,3 +65,45 @@ def ask_for_int():
         finally:
             print("This always runs even if you have an error")
 ```
+
+# Pylint and Unit Testing
+* ```pylint myexample.py -r y```
+* as you begin to expand to larger multi-file projects it becomes important to have tests in place - this way if you make changes to the code you can run your test files to make sure previous code still runs as expected
+### Testing tools
+* **Pylint:** this library looks at your code and reports back possible issues
+* **Unittest:** (built in to python) this built in library will allow you to test your own programs and check if you are getting the desired output
+
+## Pylint
+* to install:
+```
+pip install pylint
+```
+* example file:
+```
+# testingpylint.py
+a = 1
+b = 2
+
+if __name__ == "__main__":
+    print(a)
+    print(B) # notice this error
+```
+
+* to check for errors:
+```
+pylint testingpylint.py -r y
+
+# you will get this error: testingpylint.py:7:10: E0602: 
+# Undefined variable 'B' (undefined-variable)
+#
+# Your code has been rated at -8.00/10
+```
+
+## Unittest - Unit Testing
+* **see the section code folder for an example**
+* Basic steps:
+* import unit testing
+* import your functions to test
+* create a class for testing. Inherit from ```unittest.TestCase```
+* create methods to test your functions - ```self.assertEqual(result,'expected result')```
+* unittest.main()
