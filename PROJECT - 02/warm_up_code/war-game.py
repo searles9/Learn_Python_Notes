@@ -1,3 +1,9 @@
+# ------------------------------------------------------------------
+# IMPORTANT NOTE: I didnt make this particular code. This was a 
+# guided code along as part of the course which was meant to be a 
+# warm up for the real project.
+#-------------------------------------------------------------------
+
 import random
 
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
@@ -15,10 +21,20 @@ class Card:
     def __str__(self):
         return self.rank + ' of ' + self.suit
 
-# two_of_hearts = Card('Hearts','Two')
-# three_of_clubs = Card('Clubs','Three')
-# two_of_hearts.value < three_of_clubs.value  ....is true
-
-class Deck():
-    pass 
-
+class Deck:
+    
+    def __init__(self):
+        # Note this only happens once upon creation of a new Deck
+        self.all_cards = [] 
+        for suit in suits:
+            for rank in ranks:
+                # This assumes the Card class has already been defined!
+                self.all_cards.append(Card(suit,rank))
+                
+    def shuffle(self):
+        # Note this doesn't return anything
+        random.shuffle(self.all_cards)
+        
+    def deal_one(self):
+        # Note we remove one card from the list of all_cards
+        return self.all_cards.pop()
