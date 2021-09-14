@@ -11,6 +11,8 @@
 * Timeit
 * Regular Expressions
 * Unzipping and Zipping Modules
+***
+***
 # Python Collections Module
 * built in to python 
 * implements specialized container data types - an alternitive to Pythons built in general purpose container types
@@ -139,3 +141,92 @@ for folder , sub_folders , files in os.walk("Example_Top_Level"):
     # Now look at subfolders
 
 ```
+***
+***
+# Python Datetime Module
+* Datetime allows you to deal with time stamps in your code. The time values are represented with the time class.
+* instance ttributes: hour, minute, second, and microsecond - can include time zone info
+### Time
+```
+import datetime
+t = datetime.time(4, 20, 1)
+
+
+print(t)   # returns 04:20:01
+print('hour  :', t.hour)
+print('minute:', t.minute)
+print('second:', t.second)
+print('microsecond:', t.microsecond)
+print('tzinfo:', t.tzinfo) # time zone
+```
+* check the min and max values:
+```
+print('Earliest  :', datetime.time.min)
+print('Latest    :', datetime.time.max)
+print('Resolution:', datetime.time.resolution)
+```
+### Dates
+* this module is often used when working with databases
+* date timestamps
+* date values are represented with the date class
+* instance attributes: year, month, and day
+* to get todays date: ```today()```
+```
+today = datetime.date.today()
+
+print(today)
+# returns: 2020-06-10
+
+print('ctime:', today.ctime())
+# returns: Wed Jun 10 00:00:00 2020
+
+print('tuple:', today.timetuple())
+# returns: time.struct_time(tm_year=2020, tm_mon=6, tm_mday=10, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=2, tm_yday=162, tm_isdst=-1)
+
+print('ordinal:', today.toordinal())
+# returns:  737586
+
+print('Year :', today.year)
+# returns:  2020
+
+print('Month:', today.month)
+# returns:  6
+
+print('Day  :', today.day)
+# returns:  10
+```
+* to get the date range you can use the min, max and resolution
+```
+print('Earliest  :', datetime.date.min)
+# returns: Earliest  : 0001-01-01
+
+print('Latest    :', datetime.date.max)
+# returns:  Latest    : 9999-12-31
+
+print('Resolution:', datetime.date.resolution)
+# returns:  Resolution: 1 day, 0:00:00
+```
+* example of using replace() to change the year in a date:
+```
+d1 = datetime.date(2015, 3, 11)
+print('d1:', d1)
+# returns: 2015-03-11
+
+d2 = d1.replace(year=1990)
+print('d2:', d2)
+# returns:  1990-03-11
+```
+* you get get the difference between dates like this:
+```
+d1
+d2
+d1-d2
+# returns: datetime.timedelta(9131)
+# this returns the difference in days between the 2 dates
+```
+***
+***
+# Python Math and Random Module
+## Math
+
+## Random Module
