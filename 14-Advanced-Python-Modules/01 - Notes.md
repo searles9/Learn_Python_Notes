@@ -228,5 +228,165 @@ d1-d2
 ***
 # Python Math and Random Module
 ## Math
+```
+import math
+help(math)
+```
 
-## Random Module
+### Rounding numbers
+```
+value = 4.35
+math.floor(value) # 4
+math.ceiling(value) # 5
+round(value) # noth math module - its built into python
+```
+### Mathamatical constants
+```
+math.pi
+from math ipmort pi
+pi # 3.14
+math.e # big math
+math.tau # big math
+math.inf # big math
+math.nan # big math
+```
+### Logarithmic values
+```
+math.e 
+math.log(math.e)
+math.log(10)
+```
+### Custom base
+```
+math.log(100,10)
+10**2
+```
+### Trigonometrics Functions
+```
+math.sin(10)
+math.degrees(pi/2)
+math.radians(180)
+```
+
+## Randon Module
+
+```
+import random
+random.randint(0,100) # start , stop
+random.randint(0,100)
+
+# you can set a seed which basically makes it return the same set of numbers
+# the value is arbitrary and can be whatever you want
+random.seed(101)
+random.rantint(0,100)
+```
+### Random inegers
+```
+random.randint(0,100)
+```
+### Random with sequences
+* grab a random item from a list
+```
+mylist = [1,2,3,4,5,65,6]
+random.choice(mylist)
+```
+### Sample with Replacement
+* gets a sample and allows replacement
+```
+random.choices(population=mylist,k=10) # picks 10 numbers
+```
+### Sample without replacement
+```
+random.sample(population=mylist,k=10)
+```
+### Shuffle a list
+* this effects the object in place - dont assign it to anything
+```
+random.shuffle(mylist)
+```
+### Random disturbutions
+#### uniform disturbution
+* Continuous - randomly picks a value between a and b - floating point numbers are allowed
+```
+random.uniform(a=0,b=100)
+```
+#### normal/gaussian disturbution
+```
+random.gauss(mu=0,sigma=1)
+```
+
+# Python Debugger
+* python has a built in debugger tool (pdb)
+* example of an error:
+```
+x =  [1,2,3]
+y =2 
+z = 3
+
+result = y+z 
+result2 = x+y # you cant add a list and an integer 
+```
+* the  set_trace() module allows you to essentially pause the code at the point of the trace and check if anything is wrong
+```
+import pdb
+
+x = [1,3,4]
+y = 2
+z = 3
+
+result = y + z
+print(result)
+
+# Set a trace using Python Debugger
+pdb.set_trace()
+
+result2 = y+x
+print(result2)
+```
+* set trace will stop and ask for input. you then then call variables and test things out to see how things work together
+* q  to quit the trace debugger
+
+# Regular Exression 
+* in python you can search for substrings within a larger string with the in operator
+```
+"dog" in "my dog is great"
+```
+* there are some limitations to that however
+* regular expressions allow you to search patters - like an email for example , or a phone number structure
+## Searching for basic patterns
+* syntax: re.search(pattern,text)
+
+#### example expression
+* phone number: ``` (555)-555-5555```
+* regex pattern: ``` r"(\d\d\d)-\d\d\d-\d\d\d\d" ```
+* same thing - different way: ``` r"(\d{3}-\d{3}-\d{4})" ```
+* search() will scan the text and then return a match object, or none if no patter is found
+```
+text = "The person's phone number is 408-555-1234. Call soon!"
+'phone' in text
+import re
+pattern = 'phone'
+re.search(pattern,text)
+
+# this returns the span location of the text, and the match
+```
+* interacting with the match (only 1 match -the first):
+```
+re.search(pattern,text)
+match.span() # gets the span location (12,17)
+match.start() # returns the first value of the span
+match.end() # returns the last value of the span
+```
+* interacting with multible matches
+```
+matches = re.findall(pattern,text)
+# you get the matches in a list
+len(matches) # number of matches
+
+# this iterates over each match
+for match in re.finditer(pattern,text): 
+        print(match.span())
+        print(match.group()) # the matched text
+```
+
+## Patterns
