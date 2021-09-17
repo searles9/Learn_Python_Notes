@@ -548,6 +548,7 @@ f.write("Here is some text")
 f.close()
 ```
 #### zipping files:
+* the library is built into python
 ```
 import zipfile
 comp_file = zipfile.ZipFile('comp_file.zip','w')
