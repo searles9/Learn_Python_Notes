@@ -559,8 +559,8 @@ comp_file.close()
 
 #### extracting from the zip file
 ```
-zip_obj = zipfile.ZipFile('comp_file.zip','r')
-zip_obj.extractall("extracted_content")
+zip_obj = zipfile.ZipFile('comp_file.zip','r') # file
+zip_obj.extractall("extracted_content") # everything
 ```
 
 #### archiving many things at once with the shutil library
@@ -569,10 +569,7 @@ zip_obj.extractall("extracted_content")
 import shutil
 pwd - get the path
 directory_to_zip='C:\\Users\\username\\folder'
-# Creating a zip archive
 output_filename = 'example'
-# Just fill in the output_filename and the directory to zip
-# Note this won't run as is because the variable are undefined
 shutil.make_archive(output_filename,'zip',directory_to_zip)
 
 # Extracting a zip archive
