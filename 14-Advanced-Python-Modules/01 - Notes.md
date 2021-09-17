@@ -390,3 +390,97 @@ for match in re.finditer(pattern,text):
 ```
 
 ## Patterns
+
+#### Character identifiers 
+* Character 	Description 	Example Pattern Code 	Exammple Match
+* \d 	A digit 	file_\d\d 	file_25
+* \w 	Alphanumeric 	\w-\w\w\w 	A-b_1 (letter or number)
+* \s 	White space 	a\sb\sc 	a b c
+* \D 	A non digit 	\D\D\D 	ABC
+* \W 	Non-alphanumeric 	\W\W\W\W\W 	*-+=)
+* \S 	Non-whitespace 	\S\S\S\S 	Yoyo
+
+* example: 
+```
+text = "My telephone number is 408-555-1234"
+phone = re.search(r'\d\d\d-\d\d\d-\d\d\d\d',text)
+phone.group() # returns the number
+```
+* you can call for a portion of 
+```
+phone_pattern = re.compile(r'(\d{3})-(\d{3})-(\d{4})')
+results = re.search(phone_pattern,text)
+results.group() # the entire group
+results.group(1) # returns the first 3 digits
+```
+* group indexes start at 1
+* re.compile() compiles a set of expressions - the parantheses are what show what each group is
+#### Quantifiers
+* Character 	Description 	Example Pattern Code 	Exammple Match
+* "+ 	Occurs one or more times 	Version \w-\w+ 	Version A-b1_1"
+* {3} 	Occurs exactly 3 times 	\D{3} 	abc
+* {2,4} 	Occurs 2 to 4 times 	\d {2,4} 	123
+* {3,} 	Occurs 3 or more 	\w{3,} 	anycharacters
+* \* 	Occurs zero or more times 	A\*B\*C* 	AAACC
+* ? 	Once or none 	plurals? 	plural
+
+#### additional regex syntax
+* use the pipe orerator as an or statement
+```
+re.search(r"man|woman","This man was here.")
+```
+* the wildcard character can be used to match any character
+```
+re.findall(r".at","The cat in the hat sat here.")
+# returns ['cat', 'hat', 'sat']
+re.findall(r".at","The bat went splat")
+# returns ['bat', 'lat']
+# notice how it only catches the last part of it
+re.findall(r"...at","The bat went splat")
+# this catches more ... see the dots ['e bat', 'splat']
+```
+#### starts and ends with 
+* you can use the ^ to signal starts with, and the $ to signal ends with
+```
+# Ends with a number
+re.findall(r'\d$','This ends with a number 2')
+# Starts with a number
+re.findall(r'^\d','1 is the loneliest number.')
+```
+* To exclude characters, we can use the ^ symbol in conjunction with a set of brackets []. Anything inside the brackets is excluded
+```
+phrase = "there are 3 numbers 34 inside 5 this sentence."
+re.findall(r'[^\d]',phrase) # splits letters into a list
+re.findall(r'[^\d]+',phrase) # puts the stuff back together
+```
+* to remove puncuation:
+```
+test_phrase = 'This is a string! But it has punctuation. How can we remove it?'
+re.findall('[^!.? ]+',test_phrase)
+# join them back together:
+clean = ' '.join(re.findall('[^!.? ]+',test_phrase))
+print(clean)
+```
+#### Brackets for grouping
+* you can use brackets to group together options
+```
+text = 'Only find the hypen-words in this sentence. But you do not know how long-ish they are'
+re.findall(r'[\w]+-[\w]+',text)
+# returns 
+['hypen-words', 'long-ish']
+```
+#### Parenthesis for multible options
+```
+# Find words that start with cat and end with one of these options: 'fish','nap', or 'claw'
+text = 'Hello, would you like some catfish?'
+texttwo = "Hello, would you like to take a catnap?"
+textthree = "Hello, have you seen this caterpillar?"
+
+re.search(r'cat(fish|nap|claw)',text)
+re.search(r'cat(fish|nap|claw)',texttwo)
+re.search(r'cat(fish|nap|claw)',textthree) # no match
+```
+
+***
+***
+# Timing your code
