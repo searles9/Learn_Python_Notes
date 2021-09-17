@@ -484,3 +484,56 @@ re.search(r'cat(fish|nap|claw)',textthree) # no match
 ***
 ***
 # Timing your code
+* This can help you tell how long it takes your code to run
+* code needs to take at least 0.1 seconds to complete
+```
+import time
+# STEP 1: Get start time
+start_time = time.time()
+# Step 2: Run your code you want to time
+result = func_one(1000000)
+# Step 3: Calculate total time elapsed
+end_time = time.time() - start_time
+
+# returns  0.18550348281860352
+```
+
+### Timeit Module
+* this can help tell the time difference between two functions
+```
+import timeit
+setup = '''
+def func_one(n):
+    return [str(num) for num in range(n)]
+'''
+stmt = 'func_one(100)'
+timeit.timeit(stmt,setup,number=100000)
+# returns 1.3161248000000114
+
+setup2 = '''
+def func_two(n):
+    return list(map(str,range(n)))
+'''
+stmt2 = 'func_two(100)'
+timeit.timeit(stmt2,setup2,number=100000)
+
+# returns 10.894090699999992
+
+# 1 is faster
+
+```
+
+### Jupyter magic method
+*  This method is ONLY available in Jupyter and the magic command needs to be at the top of the cell with nothing above it (not even commented code)
+```
+%%timeit
+func_one(100)
+
+# returns 100000 loops, best of 3: 13.4 µs per loop
+```
+
+***
+***
+
+# Unziping and zipping files
+* create files to compress:
