@@ -89,6 +89,40 @@ print(soup.select('title')[0].getText())
 paragraphs = soup.select("p")
 paragraphs[0].getText()
 ```
-* you are basically making a request, using beautiful to parse the data and then selecting the items - you can then pull the text from said items
+* you are basically making a request, using beautiful soup to parse the data and then selecting the items - you can then pull the text from said items
 
-# Grabbing a class (css)
+# Grabbing a Class (css)
+* you need to know what to pass into ```soup.select()```
+#### soup.select() cheatsheet:
+* **soup.select('div')**  ....  All elements with the <div> tag
+* **soup.select('#some_id')** ... The HTML element containing the id attribute of some_id
+* **soup.select('.notice')** ...  All the HTML elements with the CSS class named notice
+* **soup.select('div span')** ... Any elements named <span> that are within an element named <div>
+* **soup.select('div > span')**  ... Any elements named <span> that are directly within an element named <div>, with no other element in between
+
+#### getting elemenets
+```
+# get the request
+res = requests.get('https://en.wikipedia.org/wiki/Grace_Hopper')
+# create a soup from request
+soup = bs4.BeautifulSoup(res.text,"lxml")
+# get the table of contents items that use the .toctext class
+# its a span class that contains list elements with their own class
+soup.select(".toctext")
+
+# see 1 item
+soup.select(".toctext")[0]
+
+# parse the data from that class:
+for item in soup.select(".toctext"):
+    print(item.text)
+```
+* **full code - clean example:**
+```
+res = requests.get('https://en.wikipedia.org/wiki/Grace_Hopper')
+soup = bs4.BeautifulSoup(res.text,"lxml")
+
+for item in soup.select(".toctext"):
+    print(item.text)
+```
+# Grabbing an Image 
