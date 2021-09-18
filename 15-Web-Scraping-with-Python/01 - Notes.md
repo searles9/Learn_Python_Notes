@@ -212,6 +212,9 @@ example.select('a')[1]['title']
 * **full clean code example:**
 * 51 web pages - hence the range ```1,51```
 ```
+import requests
+import bs4
+
 base_url = 'http://books.toscrape.com/catalogue/page-{}.html'
 two_star_titles = []
 
@@ -229,4 +232,4 @@ for n in range(1,51):
 
 print(two_star_titles)
 ```
-
+* The actual class is ```'.star-rating Two'```. The ```.``` is needed to indicate that there is white space. ```'.star-rating.Two'```
