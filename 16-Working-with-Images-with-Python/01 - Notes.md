@@ -97,3 +97,22 @@ pencils.rotate(120)
 ```
 
 ## Transparency
+* 0 == completely transparent
+* 255 == completely opaque
+```
+red = Image.open('red_color.jpg')
+red.putalpha(128) # now has some transparency 
+```
+* copying an image over another with some transparency:
+```
+blue.paste(red,box=(0,0),mask=red)
+blue # now shows as more purple / blue and red
+```
+* more infor on transparency: https://pillow.readthedocs.io/en/stable/
+
+## Saving Images
+```
+blue.save("purple.png")
+purple = Image.open("purple.png")
+purple # to see it
+```
