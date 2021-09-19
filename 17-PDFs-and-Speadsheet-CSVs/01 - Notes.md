@@ -26,7 +26,7 @@ csv_data = csv.reader(data)
 data_lines = list(csv_data)
 data_lines[:3]
 ```
-* the first item in the list is the header line, this contains the information about what each column represents
+* the first item in the list is the **header line**, this contains the information about what each column represents
 ```
 for line in data_lines[:5]:
     print(line)
@@ -73,3 +73,48 @@ f.close()
 
 ## Another library
 * the pandas library is also good for CVS files: ```https://pandas.pydata.org/```
+* pandas can work with sql files, excel files, etc - essentially most tabular data types
+* you could also use the googlesheets Python API for interacting directly with google spreadsheets
+
+## Some key points:
+#### Clear example opening a csv file and reading it:
+```
+# open the file with encoding
+data = open('example.csv',encoding="utf-8")
+# read as csv
+csv_data = csv.reader(data)
+# format data into a python object (list of lists)
+data_lines = list(csv_data)
+# ------------------------------------------------------
+# read the first item which is a list 
+# ex: data_lines[10][3]  - row 10 item 3 (index starts at 0)
+# of the headers - data_lines[0]:
+for line in data_lines[:5]:
+    print(line)
+# ------------------------------------------------------
+# grab one of the item in each row:
+all_emails = []
+for line in data_lines[1:15]:
+    all_emails.append(line[3])
+
+# more grabbing data:
+full_names = []
+
+for line in data_lines[1:15]:
+    full_names.append(line[1]+' '+line[2])
+# ------------------------------------------------------
+```
+
+#### Clear example of writing to an existing CSV file
+```
+# open the existing file - comma delmitied 
+f = open('to_save_file.csv','a',newline=',')
+# indicate what we are writing
+csv_writer = csv.writer(f)
+# write a single row - has to match the rows that are there
+csv_writer.writerow(['new','new','new'])
+# write 2 rows - notice 2 lists
+csv_writer.writerow(['new','new','new'],['a','b','c'])
+# close the file
+f.close()
+```
