@@ -118,3 +118,8 @@ csv_writer.writerow(['new','new','new'],['a','b','c'])
 # close the file
 f.close()
 ```
+
+***
+***
+
+# Working with PDF Files in Python
