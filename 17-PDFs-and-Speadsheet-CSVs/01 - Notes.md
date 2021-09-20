@@ -136,7 +136,7 @@ pip install PyPDF2
 import PyPDF2
 ```
 #### read a pdf
-* open the pdf then create a reader object for it
+* open the pdf then create a reader object for it then extract text
 ```
 # Notice we read it as a binary with 'rb'
 f = open('Working_Business_Proposal.pdf','rb')
