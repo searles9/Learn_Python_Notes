@@ -130,6 +130,7 @@ pip install PyPDF2
 *  not every PDF file can be read with this library. PDFs that are too blurry, have a special encoding, encrypted, or maybe just created with a particular program that doesn't work well with PyPDF2 won't be able to be read
 * more libraries: https://www.binpress.com/manipulate-pdf-python/
 *  PyPDF2 can only read text  - not images or other media
+* this library probably wont be able to read a scanned pdf
 ```
 # note the capitalization
 import PyPDF2
