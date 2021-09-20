@@ -123,3 +123,70 @@ f.close()
 ***
 
 # Working with PDF Files in Python
+* a common lbrary for working with PDFs is PyPDF2
+```
+pip install PyPDF2
+```
+*  not every PDF file can be read with this library. PDFs that are too blurry, have a special encoding, encrypted, or maybe just created with a particular program that doesn't work well with PyPDF2 won't be able to be read
+* more libraries: https://www.binpress.com/manipulate-pdf-python/
+*  PyPDF2 can only read text  - not images or other media
+```
+# note the capitalization
+import PyPDF2
+```
+#### read a pdf
+* open the pdf then create a reader object for it
+```
+# Notice we read it as a binary with 'rb'
+f = open('Working_Business_Proposal.pdf','rb')
+pdf_reader = PyPDF2.PdfFileReader(f)
+pdf_reader.numPages
+page_one = pdf_reader.getPage(0)
+# then extract the text
+page_one_text = page_one.extractText()
+page_one_text
+f.close()
+```
+#### adding to PDFs
+* you cant write to a pdf - what you can do is copy pages and append pages to the end:
+```
+f = open('Working_Business_Proposal.pdf','rb')
+pdf_reader = PyPDF2.PdfFileReader(f)
+first_page = pdf_reader.getPage(0)
+pdf_writer = PyPDF2.PdfFileWriter()
+pdf_writer.addPage(first_page)
+pdf_output = open("Some_New_Doc.pdf","wb")
+pdf_writer.write(pdf_output)
+f.close()
+```
+
+#### example of grabbing text from a PDF
+```
+f = open('Working_Business_Proposal.pdf','rb')
+
+# List of every page's text.
+# The index will correspond to the page number.
+pdf_text = []
+
+pdf_reader = PyPDF2.PdfFileReader(f)
+
+for p in range(pdf_reader.numPages):
+    
+    page = pdf_reader.getPage(p)
+    
+    pdf_text.append(page.extractText())
+
+print(pdf_text)
+print(pdf_text[3])
+```
+
+
+
+
+
+
+
+
+
+
+
