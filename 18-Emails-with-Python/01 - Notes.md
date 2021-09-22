@@ -68,3 +68,50 @@ smtp_object.quit()
 ***
 ***
 # Receiving Emails with Python 
+* you can read and search recived emails using the imaplib library. You can also use the built in email library
+```
+import imaplib
+M = imaplib.IMAP4_SSL('imap.gmail.com')
+import getpass
+user = input("Enter your email: ")
+# app password if you are a gmail user
+password = getpass.getpass("Enter your password: ")
+M.login(user,password)
+```
+* show email folders:
+```
+M.list()
+```
+* ex of connecting to the inbox:
+```
+# Connect to your inbox
+M.select("inbox")
+```
+* use this if you get an error saying limit was reached - there are often size limits ..this is how you change the limit :
+```
+imaplib._MAXLINE = 10000000
+```
+* to seach you have to use the special imap syntax
+```
+typ ,data = M.search(None,'SUBJECT "this is a test email for python"')
+
+# returns:
+# typ returns ok
+# data returns a unique ID like this [b'28298']
+```
+* data will be a list of unique ids
+```
+# typ, data = M.fetch(data[0],"(RFC822)")
+result, email_data = M.fetch(data[0],"(RFC822)")
+raw_email = email_data[0][1]
+raw_email_string = raw_email.decode('utf-8')
+```
+* you can use the build in email library to parse the raw string
+```
+import email
+email_message = email.message_from_string(raw_email_string)
+for part in email_message.walk():
+    if part.get_content_type() == "text/plain":
+        body = part.get_payload(decode=True)
+        print(body)
+```
