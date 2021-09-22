@@ -52,9 +52,12 @@ s = 'hello world'
 ```
 s.upper()
 s.lower()
+s.capitalize() # might return "Hello world"
 
 # to actually change the string:
 s = s.upper()
+
+
 ```
 ### Location and Counting
 ```
