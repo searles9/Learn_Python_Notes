@@ -120,3 +120,103 @@ s.partition('l') # returns ('he', 'l', 'lo')
 ```
 ***
 # Advanced Sets
+* some methods for sets
+```
+s = set()
+```
+#### add
+s.add(1)
+#### clear
+* removed all elements from the set
+```
+s.clear()
+```
+#### copy
+* returns a copy of the set
+```
+s = {1,2,3}
+sc = s.copy()
+```
+#### difference
+* shows the difference between 2 sets
+* syntax: ```set1.difference(set2)```
+```
+s.difference(sc)
+```
+#### difference_update
+* this returns set1 after removing elements found in set2
+```
+s1 = {1,2,3}
+s2 = {1,4,5}
+s1.difference_update(s2)
+print(s1)
+```
+#### discard
+* Removes an element from a set if it is a member. If the element is not a member, do nothing.
+```
+s.discard(2)
+```
+#### intersection and intersection_update
+* finds the items in common between 2 sets and makes a new set with those elements 
+```
+s1 = {1,2,3}
+s2 = {1,2,4}
+s1.intersection(s2)
+# returns {1, 2}
+
+# intersection_update will update a set 
+# with the intersection of itself and another.
+s1.intersection_update(s2)
+# s1 will print {1, 2}
+```
+#### isdisjoint
+* This method will return True if two sets have a null intersection.
+```
+s1 = {1,2}
+s2 = {1,2,4}
+s3 = {5}
+s1.isdisjoint(s2)
+# False
+s1.isdisjoint(s3)
+# True
+```
+#### issubset
+* This method reports whether another set contains this set.
+```
+s1.issubset(s2)
+```
+#### issuperset
+* This method will report whether this set contains another set.
+```
+s2.issuperset(s1)
+```
+#### symmetric_difference and symmetric_update
+* Return the symmetric difference of two sets as a new set.(i.e. all elements that are in exactly one of the sets.)
+```
+s1
+#{1, 2}
+s2
+# {1, 2, 4}
+s1.symmetric_difference(s2)
+# {4}
+```
+#### union
+* Returns the union of two sets (i.e. all elements that are in either set.)
+```
+s1.union(s2)
+```
+#### update
+* update a set with the union of itself and others
+```
+s1.update(s2)
+```
+***
+# Advanced Dictonaries 
+#### Dictionary Comprehensions
+* Dictionary Data Types also support their own version of comprehension for quick creation. It is not as commonly used as List Comprehensions, but the syntax is:
+```
+{x:x**2 for x in range(10)}
+# returns {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+```
+* One of the reasons it is not as common is the difficulty in structuring key names that are not based off the values.
+#### Iteration over keys, values, and items

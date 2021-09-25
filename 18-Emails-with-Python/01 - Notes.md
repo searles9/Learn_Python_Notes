@@ -69,6 +69,8 @@ smtp_object.quit()
 ***
 # Receiving Emails with Python 
 * you can read and search recived emails using the imaplib library. You can also use the built in email library
+* imaplib: https://docs.python.org/3/library/imaplib.html
+
 ```
 import imaplib
 M = imaplib.IMAP4_SSL('imap.gmail.com')
@@ -91,7 +93,7 @@ M.select("inbox")
 ```
 imaplib._MAXLINE = 10000000
 ```
-* to seach you have to use the special imap syntax
+* to seach you have to use the special imap syntax - notice the ```'SUBJECT "text"'```
 ```
 typ ,data = M.search(None,'SUBJECT "this is a test email for python"')
 
