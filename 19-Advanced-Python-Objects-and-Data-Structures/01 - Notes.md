@@ -220,3 +220,97 @@ s1.update(s2)
 ```
 * One of the reasons it is not as common is the difficulty in structuring key names that are not based off the values.
 #### Iteration over keys, values, and items
+* Dictionaries can be iterated over using the keys(), values() and items() methods. For example:
+```
+d = {'k1':1,'k2':2}
+
+# print keys
+for k in d.keys():
+    print(k)
+
+# print values
+for v in d.values():
+    print(v)
+
+# print items
+for item in d.items():
+    print(item)
+```
+#### Viewing keys, values and items
+* see the dict items as a list instead of a dictionary view object
+```
+key_view = d.keys()
+print(key_view)
+# returns dict_keys(['k1', 'k2'])
+```
+***
+# Advanced Lists
+* list
+```
+list1 = [1,2,3]
+```
+#### append
+* appends
+```
+list1.append(4)
+```
+#### count()
+* finds how many times an element is in your list
+```
+list1.count(10)
+```
+#### extend
+* extends list by appending elements from the iterable
+* append however appends a whole object at end
+```
+x = [1, 2, 3]
+x.append([4, 5])
+print(x)
+# returns [1, 2, 3, [4, 5]]
+
+x = [1, 2, 3]
+x.extend([4, 5])
+print(x)
+# returns [1, 2, 3, 4, 5]
+```
+#### index()
+* will return the index of what element you specify - if the element is not there an error is raised
+```
+list1.index(2)
+# return 1
+```
+#### insert()
+* places an object at the index supplied
+```
+print(list1)
+# [1, 2, 3, 4]
+
+# Place a letter at the index 2
+list1.insert(2,'inserted')
+
+# result: [1, 2, 'inserted', 3, 4]
+```
+#### pop()
+* remove or pop off the last element of a list - if you pass the index you can remove a specific item
+```
+ele = list1.pop(1)  # pop the second element
+```
+#### remove()
+* removed **the first occurance** of an item
+```
+list1.remove('inserted')
+```
+#### reverse
+* reverses a list - occurs in place - perm
+```
+list2.reverse()
+```
+#### sort()
+* sorts the list in place - perm
+```
+list2.sort()
+```
+* sort reversed:
+```
+list2.sort(reverse=True)
+```
