@@ -1,9 +1,6 @@
 # Learn-Python-Notes
-
-**I am still taking notes on the course so items are still being added to this**
-
-***
-This repo contains my personal Python notes. These notes were taken as part of a Python Bootcamp Udemy course I completed.
+**This repo contains my personal Python 3 notes. These notes were taken as part of a Python Bootcamp Udemy course I completed.**
+* I have other repos that contain Python projects I have completed
 ### Personal Python Notes
 * Course: https://www.udemy.com/course/complete-python-bootcamp/
 * Course notebooks repo: https://github.com/Pierian-Data/Complete-Python-3-Bootcamp
